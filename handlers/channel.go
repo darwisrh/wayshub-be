@@ -2,20 +2,21 @@ package handlers
 
 import (
 	"encoding/json"
-	"net/http"
-	"os"
-	"strconv"
 	channeldto "erlangga-final-task/dto/channel"
 	dto "erlangga-final-task/dto/result"
 	"erlangga-final-task/models"
 	"erlangga-final-task/pkg/bcrypt"
 	"erlangga-final-task/repositories"
+	"net/http"
+	"os"
+	"strconv"
 
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/gorilla/mux"
 
 	"context"
 	"fmt"
+
 	"github.com/cloudinary/cloudinary-go/v2"
 	"github.com/cloudinary/cloudinary-go/v2/api/uploader"
 )
@@ -112,12 +113,12 @@ func (h *handlerChannel) UpdateChannel(w http.ResponseWriter, r *http.Request) {
 
 	cld, _ := cloudinary.NewFromParams(CLOUD_NAME, API_KEY, API_SECRET)
 
-	resp1, err := cld.Upload.Upload(ctx, fileCover, uploader.UploadParams{Folder: "wayshub"})
+	resp1, err := cld.Upload.Upload(ctx, fileCover, uploader.UploadParams{Folder: "WaysHub"})
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 
-	resp2, err := cld.Upload.Upload(ctx, filePhoto, uploader.UploadParams{Folder: "wayshub"})
+	resp2, err := cld.Upload.Upload(ctx, filePhoto, uploader.UploadParams{Folder: "WaysHub"})
 	if err != nil {
 		fmt.Println(err.Error())
 	}

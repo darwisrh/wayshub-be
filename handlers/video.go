@@ -97,12 +97,12 @@ func (h *handlerVideo) CreateVideo(w http.ResponseWriter, r *http.Request) {
 
 	cld, _ := cloudinary.NewFromParams(CLOUD_NAME, API_KEY, API_SECRET)
 
-	resp1, err := cld.Upload.Upload(ctx, fileThumbnail, uploader.UploadParams{Folder: "wayshub"})
+	resp1, err := cld.Upload.Upload(ctx, fileThumbnail, uploader.UploadParams{Folder: "WaysHub"})
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 
-	resp2, err := cld.Upload.Upload(ctx, fileVideo, uploader.UploadParams{Folder: "wayshub"})
+	resp2, err := cld.Upload.Upload(ctx, fileVideo, uploader.UploadParams{Folder: "WaysHub"})
 	if err != nil {
 		fmt.Println(err.Error())
 	}
