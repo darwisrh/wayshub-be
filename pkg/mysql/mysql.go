@@ -9,7 +9,7 @@ import (
 
 var DB *gorm.DB
 
-Connection Database
+// Connection Database
 func DatabaseInit() {
 	var err error
 	var DB_HOST = os.Getenv("DB_HOST")
